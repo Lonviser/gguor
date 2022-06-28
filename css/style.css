@@ -50,7 +50,6 @@ a {
 }
 
 h1 {
-  font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
@@ -59,7 +58,6 @@ h1 {
 }
 
 h2 {
-  font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -74,17 +72,8 @@ li {
 .container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 50px;
-}
-@media screen and (max-width: 1024px) {
-  .container {
-    padding: 0 10px;
-  }
-}
-@media screen and (max-width: 1200px) {
-  .container {
-    padding: 0 10px;
-  }
+  width: 100%;
+  padding: 0 10px;
 }
 
 .container-full {
@@ -100,6 +89,16 @@ li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 9px;
+     -moz-column-gap: 9px;
+          column-gap: 9px;
+}
+.title-block img {
+  width: 15px;
+  height: 25px;
 }
 
 /* header */
@@ -133,9 +132,6 @@ li {
   background-size: cover;
   height: 400px;
   background-repeat: no-repeat;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .section1-position {
@@ -151,7 +147,112 @@ li {
   -webkit-column-gap: 31px;
      -moz-column-gap: 31px;
           column-gap: 31px;
+  padding-top: 110px;
 }
 
 /* Main Section */
 /* News Section */
+.news-section {
+  margin-bottom: 44px;
+}
+
+.news-blocks {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "b1 b1 b2 b3" "b1 b1 b4 b4";
+  /*
+  flex-wrap: wrap;
+  column-gap:23px;
+  grid-gap: 23px;
+  */
+}
+.news-blocks div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.news-blocks div span {
+  text-align: center;
+  background: rgba(5, 43, 109, 0.5);
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #FFFFFF;
+}
+
+.news-block1 {
+  width: 533px;
+  height: 334px;
+  background-image: url(../assets/img/news1.png);
+  grid-area: b1;
+}
+
+.news-block2 {
+  width: 215.73px;
+  height: 146px;
+  background-image: url(../assets/img/news2.png);
+  grid-area: b2;
+}
+
+.news-block3 {
+  width: 215.73px;
+  height: 146px;
+  background-image: url(../assets/img/news3.png);
+  grid-area: b3;
+}
+
+.news-block4 {
+  width: 447px;
+  height: 155px;
+  background-image: url(../assets/img/news4.png);
+  grid-area: b4;
+}
+
+.news-link {
+  display: block;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #232323;
+  margin-top: 20px;
+}
+
+/* News Section */
+/*Section Sports departments */
+.departments-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  grid-column: 20px;
+  grid-gap: 20px;
+}
+
+.departments-card {
+  width: 320px;
+  height: 122px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/*Section Sports departments */
