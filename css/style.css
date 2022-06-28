@@ -101,6 +101,14 @@ li {
   height: 25px;
 }
 
+main {
+  width: 70%;
+}
+
+aside {
+  width: 30%;
+}
+
 /* header */
 .header-position {
   display: -webkit-box;
@@ -235,9 +243,13 @@ li {
       flex-wrap: wrap;
   grid-column: 20px;
   grid-gap: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .departments-card {
+  position: relative;
   width: 320px;
   height: 122px;
   background: #FFFFFF;
@@ -254,5 +266,42 @@ li {
       -ms-flex-pack: center;
           justify-content: center;
 }
+.departments-card img {
+  position: absolute;
+  left: 0;
+  top: 5px;
+  top: 16.5px;
+}
+.departments-card span {
+  z-index: 2;
+}
 
 /*Section Sports departments */
+/* Section YouTube */
+.youTube {
+  margin-top: 22px;
+  margin-bottom: 22px;
+}
+
+/* Section YouTube */
+/* Section Goverments */
+.goverments {
+  margin-bottom: 20px;
+}
+
+.swiper {
+  width: 100%;
+  height: 100px;
+}
+
+/* Section Goverments */
+/* Footer */
+footer {
+  height: 292px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#204060), to(#00688D));
+  background: -o-linear-gradient(top, #204060 0%, #00688D 100%);
+  background: linear-gradient(180deg, #204060 0%, #00688D 100%);
+  color: white;
+}
+
+/* Footer */
