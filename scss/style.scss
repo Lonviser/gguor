@@ -12,23 +12,20 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-}
 
-header {
-  flex: 0 0 auto;
-}
 
-main {
-  flex: 1 0 auto;  
-}
-
-footer {
-  flex: 0 0 auto;
-}
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .content {
+    flex: 1 0 auto;
+  }
+  .footer {
+    flex: 0 0 auto;
+  }
+      
 a{
     text-decoration: none;
     color:white;
@@ -59,9 +56,10 @@ li{
   padding: 0 10px;
 }
 
-.container-full {
-  max-width: 1440px;
-  margin: 0 auto; 
+.main-container{
+    display: flex;
+    column-gap:25px;
+    flex: 1 0 auto;  
 }
 
 .page-content {
@@ -78,11 +76,13 @@ li{
 }
 
 main{
-    width: 70%;
+    width: 75%;
 }
 aside{
-    width: 30%;
+    max-width: 320px;
+    position:fixed ;
 }
+
 /* header */
 
 .header-position{
@@ -98,6 +98,8 @@ aside{
     padding: 0;
 
 }
+
+/* */
 
 /* header */
 
@@ -121,6 +123,9 @@ aside{
 /* Main Section */
 
 /* News Section */
+.news-blocks {
+    display: none !important;
+}
 .news-section{
     margin-bottom: 44px;
 }
@@ -222,6 +227,46 @@ aside{
     }
 }
 
+.departments-cards{
+    a{
+        color:black;
+        display: block;
+    }
+    .card1:hover{
+        color:white;
+        background-color:#0090BF;
+        transition: 0.8s;
+
+    }
+    .card2:hover{
+        color:white;
+        background-color:#482748;
+        transition: 0.8s;
+    }
+    .card3:hover{
+        color:white;
+        background-color:#D5323B;
+        transition: 0.5s;
+    }
+    .card4:hover{
+        color:white;
+        background-color:#E3CB00;
+        transition: 0.8s;
+        .Ellipse4{
+            top: 15px;
+        }
+    }
+    .card5:hover{
+        color:white;
+        background-color:#00773C;
+        transition: 0.8s;
+        .Ellipse5{
+            top: 15px;
+        }
+    }
+
+}
+
 /*Section Sports departments */
 
 /* Section YouTube */
@@ -251,14 +296,174 @@ aside{
     color:white;
     display: flex;
     align-items: center;
+    padding-top: 18px;
+    h2{
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        color: #FFFFFF;
+    }
  }
 
  .footer{
     display: flex;
     justify-content: space-between;
+    margin-bottom: 32px;
  }
 
  .footer-info{
     display: flex;
+    column-gap:32px;
+ }
+
+ .footer-contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+ }
+
+ .footer-additional{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    flex-direction: column;
+    justify-content: space-evenly;
+ }
+
+ .under-footer{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 18px;
+ }
+
+ .footer-logo{
+    width: 176px;
+    height: 174px;
  }
    /* Footer */
+
+    /* Aside */
+
+    aside{
+        display: flex;
+        flex-direction: column;
+        padding-top: 63px;
+        position: sticky;
+        img{
+
+        }
+    }
+    .footer-language{
+        display: flex;
+        column-gap:20px;
+        justify-content: flex-end;
+    }
+    .aside-line{
+        width: 1px;
+        color:#B0B0B0;
+    }
+
+    .visually-impaired{
+        display: flex;
+        column-gap:20px;
+    }
+    .social-networks{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .bold{
+        font-weight: 700;
+    }
+    .icon{
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Aside */
+    @media (max-width: 1020px)
+    {
+        .under-footer{
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+    @media (max-width: 768px){
+        .section1-position{
+            padding-top: 0;
+        }
+        main{
+            width: 100%;
+        }
+        .news-blocks{
+            grid-template-columns: 1fr;
+            grid-template-areas:
+            "b1 b1"
+            "b2 b3"
+            "b4 b4";
+        }
+
+        .main-container{
+            flex-direction: column;
+        }
+
+        .footer{
+            flex-direction: column;
+        }
+
+        .footer-info{
+            flex-direction: column;
+            align-items: center;
+        }
+        footer{
+            height: auto;
+            h2{
+                text-align: center;
+            }
+        }
+        .footer-additional{
+            margin-top: 20px;
+            align-content: flex-start;
+            align-items: center;
+            flex-wrap: nowrap;
+            div{
+                margin-top: 7px;
+            }
+        }
+        .visually-impaired{
+            column-gap:5px;
+        }
+
+        .footer-contact{
+            div{
+                margin-top: 7px;
+            }
+        }
+        .social-networks{
+            align-items: flex-start;
+        }
+        .footer-language{
+            justify-content: normal;
+        }
+        .bold{
+            margin-top: 7px;
+            margin-bottom: 7px;
+        }
+        header{
+            height: auto;
+        }
+        .departments-card{
+            width: 90%;
+        }
+        .main-image{
+            height: auto;
+        }
+        .departments-card {
+            width: 95%;
+          }
+          .departments-cards{
+            flex-direction: column;
+          }
+       }
