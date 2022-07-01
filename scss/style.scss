@@ -83,7 +83,6 @@ header{
     top: 0;
     position: sticky;
     z-index: 10;
-    display: none;
 }
 .header-position{
     display: flex;
@@ -102,7 +101,152 @@ header{
     display: flex;
 }
 /* */
+ul.menu__list {
+    padding: 0;
+    margin: 0;
+}
+.menu {}
+.menu a{
+	text-decoration: none;
+}
 
+
+.menu li{
+	position: relative;
+	list-style: none;
+}
+.menu__list {
+	display: flex;
+    justify-content: space-between;
+}
+
+
+.menu__link {
+	color: #fff;
+}
+
+.sub-menu__list {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 10px;
+	padding: 15px 0px 0px 0px;
+}
+.sub-menu__list>li{
+	background-color: #fff;
+}
+.sub-menu__list>li :hover{
+	background: linear-gradient(180deg, #204060 0%, #00688D 100%);
+}
+.sub-menu__link {
+	color: #000;
+	display: inline-block;
+	padding: 5px 10px;
+}
+.sub-sub-menu__list {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 100%;
+
+	padding: 0px 0px 0px 5px;
+}
+.sub-sub-menu__list>li{
+	background-color: #fff;
+}
+.sub-sub-menu__list>li :hover{
+    background: linear-gradient(180deg, #204060 0%, #00688D 100%);
+}
+.sub-sub-menu__link {
+	color: #000;
+	display: inline-block;
+	padding: 5px 10px;
+}
+
+.sub-sub-menu__link {
+    color:#000;
+}
+.arrow {
+	display: none;
+	position: absolute;
+	right: 0;
+	top: 12px;
+	width: 0;
+	height: 0;
+	border-top: 10px solid #fff;
+	border-right: 10px solid transparent;
+	border-left: 10px solid transparent;
+}
+.arrow.active{
+	transform: rotate(-180deg);
+}
+
+.sub-menu__arrow.arrow {
+	right: 10px;
+	border-left: 10px solid #fff;;
+	border-right: none;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+}
+
+.menu__arrow {}
+
+body.mouse .menu__list>li:hover .sub-menu__list {
+	display: block;
+}
+body.mouse .sub-menu__list>li:hover .sub-sub-menu__list {
+	display: block;
+}
+
+body.touch .sub-menu__list.open{
+	display: block;
+}
+body.touch .sub-sub-menu__list.open{
+	display: block;
+}
+body.touch .arrow {
+	display: block;
+}
+
+@media (max-width:767px){
+    .sub-menu__link {
+        color: #fff;
+    }
+    .sub-sub-menu__link {
+        color:#fff;
+    }
+    .sub-menu__list>li{
+        background: none;
+    }
+    .sub-sub-menu__list>li{
+        background: none;
+    }
+	.menu__list {
+		display: block;
+	}
+	.menu__list>li{
+		margin: 0px 0px 10px 0px;
+	}
+	.sub-menu__list{
+		position: relative;
+		left: 0;
+		top: 0;
+	}
+	.sub-sub-menu__list{
+		padding: 0px 5px;
+		position: relative;
+		left: 0;
+		top: 0;
+	}
+	.sub-menu__arrow.arrow {
+		right: 10px;
+		top: 15px;
+		border-bottom: none;
+		border-left: 10px solid transparent;
+		border-top: 10px solid #fff;
+		border-right: 10px solid transparent;
+	}
+}
 /* header */
 
 /* Main Section */
@@ -320,6 +464,53 @@ header{
     width: 100%;
     height: 100px;
   }
+
+  .swiper-button-prev{
+    left: 2 !important;
+    top: 43px !important;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    transform: matrix(1, 0, 0, -1, 0, 0);
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top:10px;
+    padding-bottom: 10px;
+    border-radius: 50%;
+  }
+  .swiper-button-next{
+    right: 2 !important;
+    top: 43px !important;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    transform: matrix(1, 0, 0, -1, 0, 0);
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top:10px;
+    padding-bottom: 10px;
+    border-radius: 50%;
+  }
+  :root {
+    --swiper-navigation-color: #FF2C21;
+  }
+  :root {
+    --swiper-navigation-size:22px !important;
+  }
+  .swiper-slide.swiper-slide-duplicate.swiper-slide-active {
+    display: flex;
+    justify-content: flex-end;
+}
+.swiper-slide.swiper-slide-active {
+    display: flex;
+    justify-content: flex-end;
+}
+.swiper-slide.swiper-slide-duplicate.swiper-slide-next {
+    display: flex;
+    justify-content: center;
+}
+.swiper-slide.swiper-slide-next {
+    display: flex;
+    justify-content: center;
+}
   /* Section Goverments */
 
   /* Footer */
@@ -394,7 +585,8 @@ header{
     }
     .aside-block{
         position: sticky;
-        top: 0; 
+        top: 120px;
+
     }
     .footer-language{
         display: flex;
@@ -459,6 +651,9 @@ header{
     }
     @media (max-width: 1020px)
     {
+        aside{
+            padding-top: 10px;
+        }
         .under-footer{
             flex-direction: column;
             text-align: center;
@@ -546,7 +741,14 @@ header{
             column-gap:5px;
         }
     }
-
+    @media (max-width: 500px){
+        .swiper-slide.swiper-slide-active {
+            justify-content: center;
+        }
+        .swiper-slide.swiper-slide-duplicate.swiper-slide-active {
+            justify-content: center;
+        }
+    }
     @media (max-width: 320px) {
         .news-blocks{
             div{
@@ -555,5 +757,4 @@ header{
                 }
             }
         }
-
     }

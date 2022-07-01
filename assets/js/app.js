@@ -1,4 +1,6 @@
 var swiper = new Swiper(".mySwiper", {
+   autoplay: {
+    delay: 3500},
     slidesPerView: 6,
     spaceBetween: 15,
     slidesPerGroup: 3,
@@ -10,95 +12,74 @@ var swiper = new Swiper(".mySwiper", {
     },
     breakpoints: {
       // when window width is >= 320px
+      200:{
+        slidesPerView:1,
+        slideToClickedSlide: true,
+      },
       320: {
         slidesPerView:1,
+        slidesPerGroup: 1,
         // spaceBetween: 0,
         slideToClickedSlide: true,
     },
-       425: {
+       500: {
         slidesPerView: 2,
+        slidesPerGroup: 1,
         spaceBetween: 0,
        slideToClickedSlide: true,
      },
-     570: {
+     750: {
         slidesPerView: 3,
-        spaceBetween: 20,
+        spaceBetween: 0,
         slideToClickedSlide: true,
     },
-      1050: {
-          slidesPerView:5,
-          // spaceBetween: 0,
-          slideToClickedSlide: true,
-      },
-      // when window width is >= 480px
       960: {
           slidesPerView: 4,
           // spaceBetween: 0,
           slideToClickedSlide: true,
-      },          
+      },
+      1050: {
+        slidesPerView:4,
+        // spaceBetween: 0,
+        slideToClickedSlide: true,
+    },          
       1320: {
-          slidesPerView: 6,
+          slidesPerView: 5,
           // spaceBetween: 0,
           slideToClickedSlide: true,
       },
-    //   1440: {
-    //     slidesPerView: 4,
-    //     // spaceBetween: 0,
-    //     slideToClickedSlide: true,
-    // }
+       1440: {
+       slidesPerView: 6,
+       spaceBetween: 0,
+      slideToClickedSlide: true,
+     }
   }
   });
 
-  const partners = new Swiper('.s-partners', {
-    slidesPerView: 4,
-    spaceBetween: 10,
-    freeMode: true,
-    loop: true,   
-
-  // Navigation arrows
-  navigation: {
-    nextEl: '.partners__next',
-    prevEl: '.partners__prev',
-  },
-
-  breakpoints: {
-        // when window width is >= 320px
-        320: {
-          slidesPerView:1,
-          // spaceBetween: 0,
-          slideToClickedSlide: true,
-      },
-      //   425: {
-      //     slidesPerView: 2,
-      //     // spaceBetween: 0,
-      //     slideToClickedSlide: true,
-      // },
-      // 570: {
-      //   slidesPerView: 3,
-      //   // spaceBetween: 0,
-      //   slideToClickedSlide: true,
-      // },
-        620: {
-            slidesPerView:2,
-            // spaceBetween: 0,
-            slideToClickedSlide: true,
-        },
-        // when window width is >= 480px
-        960: {
-            slidesPerView: 3,
-            // spaceBetween: 0,
-            slideToClickedSlide: true,
-        },          
-        1320: {
-            slidesPerView: 4,
-            // spaceBetween: 0,
-            slideToClickedSlide: true,
-        },
-      //   1440: {
-      //     slidesPerView: 4,
-      //     // spaceBetween: 0,
-      //     slideToClickedSlide: true,
-      // }
+  let isMobile = {
+    Android: function() {return navigator.userAgent.match(/Android/i);},
+    BlackBerry: function() {return navigator.userAgent.match(/BlackBerry/i);},
+    iOS: function() {return navigator.userAgent.match(/iPhone|iPad|iPod/i);},
+    Opera: function() {return navigator.userAgent.match(/Opera Mini/i);},
+    Windows: function() {return navigator.userAgent.match(/IEMobile/i);},
+    any: function() {return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());}
+  };
+      let body=document.querySelector('body');
+  if(isMobile.any()){
+      body.classList.add('touch');
+      let arrow=document.querySelectorAll('.arrow');
+    for(i=0; i<arrow.length; i++){
+        let thisLink=arrow[i].previousElementSibling;
+        let subMenu=arrow[i].nextElementSibling;
+        let thisArrow=arrow[i];
+  
+        thisLink.classList.add('parent');
+      arrow[i].addEventListener('click', function(){
+        subMenu.classList.toggle('open');
+        thisArrow.classList.toggle('active');
+      });
     }
-}); 
-
+  }else{
+    body.classList.add('mouse');
+  }
+  
