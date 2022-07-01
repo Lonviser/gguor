@@ -125,6 +125,15 @@ header {
   margin-right: 5px;
 }
 
+.burger__position {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
 .header-position {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -367,9 +376,14 @@ ul.menu__list {
     padding-bottom: 13px;
   }
 }
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
+  .wrapper {
+    overflow: auto;
+  }
+
   ul.menu__list {
-    padding-top: 0px;
+    padding: 40px;
+    overflow: auto;
   }
 
   .home-link {
@@ -427,12 +441,44 @@ ul.menu__list {
   }
 }
 /* */
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
   header {
     height: auto;
     padding-bottom: 20px;
     position: fixed;
     width: 100%;
+  }
+
+  .reception {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .lang-zone {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .header-position {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
+  .header_additional {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 
   body.lock {
@@ -567,6 +613,13 @@ ul.menu__list {
 
   section.main-image {
     margin-top: 54px;
+  }
+}
+@media (max-width: 540px) {
+  .header_first-block {
+    -webkit-box-align: center !important;
+        -ms-flex-align: center !important;
+            align-items: center !important;
   }
 }
 /* header */
@@ -831,7 +884,7 @@ ul.menu__list {
       -ms-transform: matrix(1, 0, 0, -1, 0, 0);
           transform: matrix(1, 0, 0, -1, 0, 0);
   padding-left: 12px;
-  padding-right: 12px;
+  padding-right: 16.5px;
   padding-top: 10px;
   padding-bottom: 10px;
   border-radius: 50%;
@@ -846,7 +899,7 @@ ul.menu__list {
   -webkit-transform: matrix(1, 0, 0, -1, 0, 0);
       -ms-transform: matrix(1, 0, 0, -1, 0, 0);
           transform: matrix(1, 0, 0, -1, 0, 0);
-  padding-left: 12px;
+  padding-left: 16.5px;
   padding-right: 12px;
   padding-top: 10px;
   padding-bottom: 10px;
