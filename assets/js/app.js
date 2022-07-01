@@ -83,3 +83,9 @@ var swiper = new Swiper(".mySwiper", {
     body.classList.add('mouse');
   }
   
+  $(document).ready(function() {
+    $('.header__burger').click(function(event){
+    $('.header__burger,.header__menu').toggleClass('active');
+    $('body').toggleClass('lock');
+    });
+});
